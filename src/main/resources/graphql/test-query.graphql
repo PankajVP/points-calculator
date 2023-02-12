@@ -1,0 +1,17 @@
+query{
+    getSaleById(id:1){
+        points
+        finalPrice
+        dateTime
+    }
+    getAllSales{
+        points
+        finalPrice
+        dateTime
+    }
+    getSalesByRange(dateRangeInput:{from:"2022-09-01T00:00:00Z",to:"2022-09-01T08:00:00Z"}){
+        datetime,
+        sales,
+        points
+    }
+}

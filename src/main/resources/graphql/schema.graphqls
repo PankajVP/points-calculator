@@ -1,0 +1,57 @@
+scalar DateTime
+scalar BigDecimal
+
+type SalePrice{
+    finalPrice: BigDecimal!
+    points: BigDecimal!
+}
+
+type Sale{
+    dateTime: DateTime!
+    finalPrice: BigDecimal!
+    points: BigDecimal!
+}
+
+type SaleListObject{
+    datetime: String
+    sales: BigDecimal!
+    points: BigDecimal!
+}
+
+
+input SaleInput{
+    price:BigDecimal!
+    priceModifier:Float!
+    paymentMethod: String!
+    datetime: DateTime!
+}
+
+input DateRangeInput{
+    from: DateTime!
+    to: DateTime!
+}
+
+
+input CreatePostInput {
+    title: String!
+    content: String!
+}
+
+input CommentInput{
+    postId: String!
+    content: String!
+}
+
+type Query{
+
+    getSaleById(id: ID): Sale
+    getAllSales: [Sale]
+    getSalesByRange(dateRangeInput:DateRangeInput!): [SaleListObject] #SECOND ENDPOINT IN ASSIGNMENT
+}
+
+type Mutation{
+
+    addSale(salesInput: SaleInput!): SalePrice  #FIRST ENDPOINT IN ASSIGNMENT
+    updateSale(id: ID, salesInput: SaleInput!): SalePrice
+    deleteSaleById(id: ID): Sale
+}

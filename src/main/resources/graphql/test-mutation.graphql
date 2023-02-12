@@ -1,0 +1,22 @@
+mutation{
+    addSale(salesInput:{
+        price:100
+        priceModifier:0.95
+        paymentMethod:"AMEX"
+        datetime:"2022-09-01T00:00:00Z"
+    }){
+        finalPrice,
+        points
+    }
+
+    updateSale(id:1,salesInput:{
+        price:100
+        priceModifier:0.95
+        paymentMethod:"AMEX"
+        datetime:"2022-09-01T00:00:00Z"
+    }){
+        finalPrice,
+        points
+    }
+}
+
