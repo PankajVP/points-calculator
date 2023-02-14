@@ -2,22 +2,17 @@ package com.anymind.points;
 
 import com.anymind.points.dto.SaleResponseDto;
 import com.anymind.points.dto.SalesListDto;
-import com.anymind.points.exception.CustomException;
-import com.anymind.points.model.Sale;
 import com.anymind.points.repository.SalesRepository;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.graphql.tester.AutoConfigureGraphQlTester;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContextException;
 import org.springframework.graphql.test.tester.GraphQlTester;
 import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Hooks;
 import reactor.test.StepVerifier;
 
@@ -26,12 +21,13 @@ import java.time.ZonedDateTime;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 /**
  * WARNING: AS NO MOCKS ARE USED, EXECUTING THE INTEGRATION TEST WILL DELETE ALL THE EXISTING DATA IN POSTGRESQL
+ * UNCOMMENT THE CLASS TO RUN
  */
+/*
 
 @AutoConfigureGraphQlTester
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -116,4 +112,4 @@ class IntegrationTests {
 	}
 
 }
-
+ */
