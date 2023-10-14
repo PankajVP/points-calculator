@@ -75,6 +75,12 @@ public class SalesSystemController {
         return salesService.addSale(salesInput);
     }
 
+    @MutationMapping("this is a duplicate code")
+    Mono<SaleResponseDto> addSale1(@Argument("salesInput") SalesInput salesInput) {
+        log.debug("Add Sale using 'addSale' mutation::" + salesInput);
+        return salesService.addSale(salesInput);
+    }
+
     @MutationMapping("updateSale")
     Mono<SaleResponseDto> updateSale(@Argument Integer id, @Argument("salesInput") SalesInput salesInput) {
         log.debug("Updating Sale using 'updateSale' mutation for id" + id + " salesInput::" + salesInput);
